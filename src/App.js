@@ -13,7 +13,6 @@ export default function App() {
 
         const searchContact = contacts.some((e) => e.name.includes(data.name));
     
-    
         if (searchContact) {
           alert(`${data.name} is already in contacts`);
         } else {
@@ -22,7 +21,6 @@ export default function App() {
           };
           setContacts(old => [...old, newContact]);
         }
-    
     };
     
     const filterContacts = () => {
