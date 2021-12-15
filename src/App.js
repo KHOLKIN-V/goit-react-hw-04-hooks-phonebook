@@ -10,15 +10,15 @@ export default function App() {
     const [filter, setFilter] = useState('');
 
     useEffect(() => {
-      localStorage.setItem("contacts", JSON.stringify(contacts))
-    }, [contacts]);
-
-    useEffect(() => {
       const parsContacts = JSON.parse(localStorage.getItem("contacts"));
       if (parsContacts) {
         setContacts(parsContacts);
       }
-    },[])
+    }, []);
+
+    useEffect(() => {
+      localStorage.setItem("contacts", JSON.stringify(contacts));
+    }, [contacts]);
 
     const formSubmit = (data) => {
 
